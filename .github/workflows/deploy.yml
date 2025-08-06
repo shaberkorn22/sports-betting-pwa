@@ -15,8 +15,7 @@ jobs:
       - name: Install Node for frontend
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
-
+    node-version: '18'
       - name: Install frontend dependencies
         run: |
           if [ -d "frontend" ]; then
@@ -26,7 +25,7 @@ jobs:
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
-        if: ${{ secrets.VERCEL_TOKEN != '' }}
+   ##     if: ${{ secrets.VERCEL_TOKEN != '' }}
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_TEAM_ID }}
