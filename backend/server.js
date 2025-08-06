@@ -10,10 +10,10 @@ app.use(bodyParser.json());
 
 // Initialize PostgreSQL pool
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+connectionString: process.env.DATABASE_URL,
   // Enable SSL in production
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
-})
+
 
 // Get daily picks
 app.get('/api/picks', async (req, res) => {
